@@ -31,7 +31,6 @@ def checkValidity(p: int, q: int, pq: int): return p * q == pq
 def main(iterations):
     
     for count in range(iterations):
-        
         countOut = count + 1
         
         sample = createSample()
