@@ -1,4 +1,5 @@
 import random as r
+import time
 
 count: int = 0
 iterations: int = 0
@@ -54,9 +55,11 @@ def main(iterations):
         pq, p1, p2 = sample
         print(f'Sample being used: {pq}, with factors being {p1} and {p2} - [{countOut}/{iterations}]')
         
+        startCalc = time.time()
         values = factorize(pq)
         p, q = values
-        print(f'Finished calculations with result of {p} and {q} after 10 seconds')
+        elapsed = time.time() - startCalc
+        print(f'Finished calculations with result of {p} and {q} after {elapsed} seconds')
         
         validity = checkValidity(p, q, pq)
         print(f'Finished sample [{countOut}/{iterations}] with validity being {validity}')
@@ -77,3 +80,4 @@ if __name__ == '__main__':
 # - Add verbose flag that gives all the values it calculates with
 # - Add two pathy, one of them using traditional 10^n idea and the other one with φ
 # - Longterm testing wether traditional or φ is more efficient
+# - Add timer to time calculations
