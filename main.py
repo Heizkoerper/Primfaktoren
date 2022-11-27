@@ -57,3 +57,4 @@ if __name__ == '__main__':
     main(iterations)
     
 #ToDo
+# - Add verbose flag that gives all the values it calculates with
