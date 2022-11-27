@@ -21,7 +21,24 @@ def createSample():
     return prod, prim1, prim2
 
 
-def factorize(pq): print(f'ToDo: Insert method to further use {pq}'); return 7, 11
+def factorize(pq):
+    
+    # Calculate the lenght of the period of 1/pq
+    remainder: int = 0
+    exponent: int = 0
+    
+    while not remainder == 1:
+        exponent += 1
+        remainder = (10**exponent) % pq
+    
+    div = (pq-1) % exponent
+    
+    print(f'Periodenlänge beläuft sich auf {exponent}') #Debug
+    print(f'pq-1 % n = {div}') #Debug
+        
+    
+    
+    return 7, 11
 
 
 # Compare the product calculated factors witht the original product
