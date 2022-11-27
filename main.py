@@ -1,5 +1,6 @@
 import random as r
 import time
+import math
 
 count: int = 0
 iterations: int = 0
@@ -32,12 +33,20 @@ def factorize(pq):
         exponent += 1
         remainder = (10**exponent) % pq
     
-    div = (pq-1) % exponent
+    l: int = exponent
+    div = (pq-1) % l
     
-    print(f'Periodenlänge beläuft sich auf {exponent}') #Debug
+    print(f'Periodenlänge beläuft sich auf {l}') #Debug
     print(f'pq-1 % n = {div}') #Debug
-        
     
+    
+    # Prepear values for quadratic equaiton
+    r: int = ((pq+1)/2) % l    
+    
+    if r*2 > math.sqrt(pq):
+        print(f'Bed 1 erfüllt -> (p+q)/2 = r (= {r})') #Debug
+    else:
+        print(f'Bed 2 erfüllt -> (p+q)/2 = r+n*l') #Debug
     
     return 7, 11
 
