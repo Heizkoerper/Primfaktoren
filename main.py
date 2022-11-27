@@ -1,5 +1,4 @@
 import random as r
-import random as r
 
 count: int = 0
 iterations: int = 0
