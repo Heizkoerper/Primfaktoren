@@ -26,6 +26,9 @@ def main(iterations):
 
 if __name__ == '__main__':
     
+    print('Method by Martin Gebhardt', 'Code by Jonathan Schnieders', '(c) 2022 - All rights reserved', sep='\n', end='\n\n')
+    print(f'Using preset data set with {lenght} objects...')
+    
     #iterations = int(input('Set number of iterations: '))
     iterations = 1
     
