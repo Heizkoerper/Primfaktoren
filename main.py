@@ -35,15 +35,14 @@ def factorize(pq):
     
     l: int = exponent
     
-    print(f'Periodenlänge beläuft sich auf {l}') #Debug
-    print(f'pq-1 % l = {(pq-1) / l}') #Debug
-    
+    print(f'Periodenlänge beläuft sich auf {l}') #Debug  
     
     # Prepear values for quadratic equaiton
     r: int = ((pq+1)/2) % l    
     
     if r*2 > math.sqrt(pq):
-        print(f'Bed 1 erfüllt -> (p+q)/2 = r (= {r})') #Debug
+        print(f'Bed 1 erfüllt -> (p+q)/2 = r') #Debug
+        print(f'{(p+q)/2} = {r}') #Debug
     else:
         print(f'Bed 2 erfüllt -> (p+q)/2 = r+n*l') #Debug
     
@@ -69,7 +68,7 @@ def main(iterations):
         print(f'Finished calculations with result of {p} and {q} after {elapsed} seconds')
         
         validity = checkValidity(p, q, pq)
-        print(f'Finished sample [{count+1}/{iterations}] with validity being {validity}')
+        print(f'Finished sample [{count+1}/{iterations}] with validity being {validity} \n')
         
     
 
