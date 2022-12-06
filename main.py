@@ -87,5 +87,5 @@ if __name__ == '__main__':
     
 #ToDo
 # - Add verbose flag that gives all the values it calculates with
-# - Add two pathy, one of them using traditional 10^n idea and the other one with φ
+# - Add second path, one of them using traditional 10^n idea and the other one with φ
 # - Longterm testing wether traditional or φ is more efficient
