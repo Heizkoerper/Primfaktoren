@@ -34,10 +34,9 @@ def factorize(pq):
         remainder = (10**exponent) % pq
     
     l: int = exponent
-    div = (pq-1) % l
     
     print(f'Periodenlänge beläuft sich auf {l}') #Debug
-    print(f'pq-1 % n = {div}') #Debug
+    print(f'pq-1 % n = {(pq-1) % l}') #Debug
     
     
     # Prepear values for quadratic equaiton
@@ -58,11 +57,10 @@ def checkValidity(p: int, q: int, pq: int): return p * q == pq
 def main(iterations):
     
     for count in range(iterations):
-        countOut = count + 1
         
         sample = createSample()
         pq, p1, p2 = sample
-        print(f'Sample being used: {pq}, with factors being {p1} and {p2} - [{countOut}/{iterations}]')
+        print(f'Sample being used: {pq}, with factors being {p1} and {p2} - [{count+1}/{iterations}]')
         
         startCalc = time.time()
         values = factorize(pq)
@@ -71,7 +69,7 @@ def main(iterations):
         print(f'Finished calculations with result of {p} and {q} after {elapsed} seconds')
         
         validity = checkValidity(p, q, pq)
-        print(f'Finished sample [{countOut}/{iterations}] with validity being {validity}')
+        print(f'Finished sample [{count+1}/{iterations}] with validity being {validity}')
         
     
 
