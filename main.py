@@ -40,7 +40,7 @@ def factorize(pq):
     
     
     # Prepear values for quadratic equaiton
-    r: int = ((pq+1)/2) % l    
+    r: int = ((pq-1)/2) % l    
     
     if r*2 > math.sqrt(pq):
         print(f'Bed 1 erfüllt -> (p+q)/2 = r (= {r})') #Debug
