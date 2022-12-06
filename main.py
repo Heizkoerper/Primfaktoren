@@ -41,8 +41,7 @@ def factorize(pq):
     r: int = ((pq+1)/2) % l    
     
     if r*2 > math.sqrt(pq):
-        print(f'Bed 1 erfüllt -> (p+q)/2 = r') #Debug
-        print(f'{(p+q)/2} = {r}') #Debug
+        print(f'Bed 1 erfüllt -> (p+q)/2 = r (= {r})') #Debug
     else:
         print(f'Bed 2 erfüllt -> (p+q)/2 = r+n*l') #Debug
     
