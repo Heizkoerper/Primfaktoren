@@ -48,6 +48,12 @@ def factorize(pq):
     return 7, 11
 
 
+def solveCond1(): print('ToDo')
+
+
+def solveCond2(): print('ToDo')
+
+
 # Compare the product calculated factors witht the original product
 def checkValidity(p: int, q: int, pq: int): return p * q == pq
   
