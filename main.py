@@ -36,11 +36,11 @@ def factorize(pq):
     l: int = exponent
     
     print(f'Periodenlänge beläuft sich auf {l}') #Debug
-    print(f'pq-1 % n = {(pq-1) % l}') #Debug
+    print(f'pq-1 % l = {(pq-1) / l}') #Debug
     
     
     # Prepear values for quadratic equaiton
-    r: int = ((pq-1)/2) % l    
+    r: int = ((pq+1)/2) % l    
     
     if r*2 > math.sqrt(pq):
         print(f'Bed 1 erfüllt -> (p+q)/2 = r (= {r})') #Debug
