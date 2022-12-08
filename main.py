@@ -48,7 +48,7 @@ def factorize(pq):
     return 7, 11
 
 
-def solveCond1(): print('ToDo')
+def solveCond1(r, a): print('Continue on other device')
 
 
 def solveCond2(): print('ToDo')
