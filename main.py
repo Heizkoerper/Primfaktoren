@@ -42,13 +42,16 @@ def factorize(pq):
     
     if r*2 > math.sqrt(pq):
         print(f'Bed 1 erfüllt -> (p+q)/2 = r (= {r})') #Debug
+        return solveCond1(r, pq)
+        
     else:
         print(f'Bed 2 erfüllt -> (p+q)/2 = r+n*l') #Debug
     
-    return 7, 11
+    raise Exception('Fatal Error -> Methode failed')
+    return 0
 
 
-def solveCond1(r, a): print('Continue on other device')
+def solveCond1(r, a): return r - math.sqrt(r**2 - a), r + math.sqrt(r**2 - a)
 
 
 def solveCond2(): print('ToDo')
