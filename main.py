@@ -69,8 +69,8 @@ def solve(r, l, pq):
         
         
 
-# Compare the product calculated factors witht the original product
-def checkValidity(p: int, q: int, pq: int): return p * q == pq
+# Compare the product calculated factors witht the original product and one of the calculated factors against the original ones
+def checkValidity(p: int, q: int, p1: int, p2: int, pq: int): return (p * q == pq and (q == p1 or q == p2))
   
 
 def main(iterations):
@@ -87,7 +87,7 @@ def main(iterations):
         elapsed = time.time() - startCalc
         print(f'Finished calculations with result of {p} and {q} after {elapsed} seconds')
         
-        validity = checkValidity(p, q, pq)
+        validity = checkValidity(p, q, p1, p2, pq)
         print(f'Finished sample [{count+1}/{iterations}] with validity being {validity} \n')
         
     
