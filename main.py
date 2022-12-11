@@ -36,37 +36,35 @@ def factorize(pq):
     
     l: int = exponent
     
-    print(f'Periodenlänge beläuft sich auf {l}') #Debug  
+    print(f'[Debug] Periodenlänge beläuft sich auf {l}') #Debug  
     
     # Prepear values for quadratic equaiton
-    r: int = ((pq+1)/2) % l    
+    r: int = ((pq+1)/2) % l 
+      
+    # Solve for calculated values
+    return solve(r, l, pq)
+
+
+
+def solve(r, l, pq):
     
-    if r*2 > math.sqrt(pq):
-        print(f'Bed 1 erfüllt -> (p+q)/2 = r (= {r})') #Debug
-        return solveCond1(r, pq)
-        
-    else:
-        print(f'Bed 2 erfüllt -> (p+q)/2 = r+n*l') #Debug
-        return solveCond2(r, l, pq)
-
-
-def solveCond1(r, pq): return r - math.sqrt(r**2 - pq), r + math.sqrt(r**2 - pq)
-
-
-def solveCond2(r, l, pq):
-    
-    n: int = 0
+    n: int = -1
     found: bool = False
     
     while not found:
         n += 1
-        q = n*l + r + math.sqrt(n**2 * l**2 +2*r*n*l + r**2 - pq)
+        
+        # Precalculate root term and ensure it is greater or equal 0
+        term: int = n**2 * l**2 +2*r*n*l + r**2 - pq
+        if term < 0: continue
+        
+        q = n*l + r + math.sqrt(term)
         
         found = q.is_integer()
     
     p = n*l + r - math.sqrt(n**2 * l**2 +2*r*n*l + r**2 - pq)
     
-    print(f'Das n beläuft sich auf {n}') #Debug
+    print(f'[Debug] Das n beläuft sich auf {n}') #Debug
     return p, q
         
         
@@ -100,7 +98,7 @@ if __name__ == '__main__':
     print(f'Using preset data set with {lenght} objects...')
     
     #iterations = int(input('Set number of iterations: '))
-    iterations = 100
+    iterations = 1
     
     main(iterations)
     
